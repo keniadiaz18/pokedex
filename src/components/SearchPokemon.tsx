@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useGetPokemonByNameQuery } from '../api/PokemonApi';
 import PokemonCard from './PokemonCard';
 
-const SearchBar = () => {
+const SearchPokemon = () => {
   const [query, setQuery] = useState('');
   const { data, isLoading, error } = useGetPokemonByNameQuery(query, {
     skip: !query,
@@ -13,21 +13,21 @@ const SearchBar = () => {
   }
 
   return (
-    <div className="p-4">
+    <div >
       <input
         type="text"
-        placeholder="Buscar Pokémon..."
+        placeholder="Search Pokémon..."
         className="border p-2 rounded w-full"
         value={query}
         onChange={(e) => setQuery(e.target.value.toLowerCase())}
       />
       <div className="mt-4">
-        {isLoading && <p>Buscando...</p>}
-        {error && <p>No encontrado.</p>}
+        {isLoading && <p>Searching...</p>}
+        {error && <p>Not Found.</p>}
         {data && <PokemonCard name={data.name} />}
       </div>
     </div>
   );
 };
 
-export default SearchBar;
+export default SearchPokemon;

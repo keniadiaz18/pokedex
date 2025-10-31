@@ -1,6 +1,7 @@
 import React from "react";
 import { useGetPokemonsQuery } from "../api/PokemonApi";
 import PokemonCard from "./PokemonCard";
+import "./PokemonList.css"
 
 const PokemonList: React.FC = () => {
     const {data: pokemonsData, error, isLoading} = useGetPokemonsQuery(20);
@@ -12,9 +13,13 @@ const PokemonList: React.FC = () => {
 
 
       return (
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+        <div className="pokemonTable">
             {pokemonList?.map((pokemon) => (
+                <div
+                key={pokemon.name}
+                className="clickablePokemon">
                 <PokemonCard key={pokemon.name} pokemonName={pokemon.name} />
+                </div>
             ))}
         </div>
     );

@@ -1,0 +1,15 @@
+.pokemonTable {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas por defecto */
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.capitalize {
+  text-transform: capitalize;
+  text-align: left;
+}
+
+.clickablePokemon {
+    cursor: pointer;
+}
