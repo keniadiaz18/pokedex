@@ -18,3 +18,8 @@ interface PokemonDataResponse {
 interface Sprites  {
   front_default: string;
 }
+
+interface PokemonModal {
+  selectedPokemon: string;
+  onClose: () => void;
+}

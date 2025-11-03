@@ -11,7 +11,7 @@ const PokemonCard = ({pokemonName}: any) => {
             <img 
             src={individualPokemonData?.sprites.front_default}
             alt={pokemonName}
-            className="w-24 h-24 mx-auto"
+            className="mx-auto"
             /> 
             <h3 className="capitalize">{pokemonName}</h3>
         </div>
